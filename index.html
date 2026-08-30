@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>まなびアプリ集 — 無料・広告なしの学習アプリ</title>
-<meta name="description" content="中学生・高校生向けの学習アプリ。英単語7,972語、中学理科398問、中学社会265問、高校生物329問。無料・広告なし・登録不要・オフライン対応。">
+<meta name="description" content="中学生向けの学習アプリ。英単語7,972語、中学理科398問、中学社会265問。無料・広告なし・登録不要・オフライン対応。">
 <meta property="og:title" content="まなびアプリ集">
-<meta property="og:description" content="無料・広告なし・登録不要の学習アプリ。英単語・理科・社会・生物。">
+<meta property="og:description" content="無料・広告なし・登録不要の学習アプリ。英単語・理科・社会。">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="icons/wordup.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +33,6 @@
     padding:6px 13px;font-size:12px;font-weight:700;color:var(--sub)}
 
   .grid{display:grid;gap:14px;margin-top:14px}
-  @media(min-width:660px){.grid{grid-template-columns:1fr 1fr}}
 
   .app{display:block;background:var(--card);border:1px solid var(--border);
     border-radius:20px;padding:20px;text-decoration:none;color:inherit;
@@ -41,6 +40,13 @@
   .app:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(31,31,80,.12)}
   .app-head{display:flex;align-items:center;gap:14px}
   .app-head img{width:54px;height:54px;border-radius:13px;flex:0 0 auto}
+  @media(min-width:660px){
+    .app{display:flex;gap:20px;align-items:flex-start;padding:22px 24px}
+    .app-head{flex:0 0 200px;flex-direction:column;align-items:flex-start;gap:11px}
+    .app-head img{width:62px;height:62px;border-radius:15px}
+    .app-body{flex:1;min-width:0}
+    .app-desc{margin-top:0}
+  }
   .app-name{font-family:'Poppins',sans-serif;font-size:18px;font-weight:800;line-height:1.25}
   .app-for{font-size:11.5px;color:var(--sub);font-weight:700;margin-top:3px}
   .app-desc{font-size:13px;color:var(--sub);font-weight:500;margin-top:13px;line-height:1.75}
@@ -90,12 +96,14 @@
           <div class="app-for">英単語 ／ 中1〜英検準1級レベル</div>
         </div>
       </div>
-      <p class="app-desc">中学の基本から英検準1級レベルまで 7,972語。6つのレベルから選んで、フラッシュカード・4択・書き取り・リスニングなど6通りの方法で覚えられます。教科書やテスト範囲の単語を自分で追加することもできます。</p>
+      <div class="app-body">
+        <p class="app-desc">中学の基本から英検準1級レベルまで 7,972語。6つのレベルから選んで、フラッシュカード・4択・書き取り・リスニングなど6通りの方法で覚えられます。教科書やテスト範囲の単語を自分で追加することもできます。</p>
       <div class="app-meta">
         <span class="tag">7,972語</span><span class="tag">6レベル</span>
         <span class="tag">6モード</span><span class="tag">音声つき</span>
       </div>
       <div class="go">ひらく ›</div>
+      </div>
     </a>
 
     <a class="app" href="https://biosprout.github.io/science-up/">
@@ -106,12 +114,14 @@
           <div class="app-for">中学理科 ／ 中1〜高校受験</div>
         </div>
       </div>
-      <p class="app-desc">物理・化学・生物・地学の4分野を398問。基礎・標準・入試の3段階から選べます。用語だけでなく「なぜそうなるか」を問う問題や、実験の考察問題も入っています。全問に解説つき。</p>
+      <div class="app-body">
+        <p class="app-desc">物理・化学・生物・地学の4分野を398問。基礎・標準・入試の3段階から選べます。用語だけでなく「なぜそうなるか」を問う問題や、実験の考察問題も入っています。全問に解説つき。</p>
       <div class="app-meta">
         <span class="tag">398問</span><span class="tag">4分野</span>
         <span class="tag">3段階</span><span class="tag">全問解説</span>
       </div>
       <div class="go">ひらく ›</div>
+      </div>
     </a>
 
     <a class="app" href="https://biosprout.github.io/social-up/">
@@ -122,29 +132,16 @@
           <div class="app-for">中学社会 ／ 中1〜高校受験</div>
         </div>
       </div>
-      <p class="app-desc">地理・歴史・公民の3分野を265問。あわせて、できごとを古い順に並べる「年代整序」を55セット収録しています。日本と世界のできごとを混ぜたセットもあり、歴史の流れを縦につかむ練習ができます。</p>
+      <div class="app-body">
+        <p class="app-desc">地理・歴史・公民の3分野を265問。あわせて、できごとを古い順に並べる「年代整序」を55セット収録しています。日本と世界のできごとを混ぜたセットもあり、歴史の流れを縦につかむ練習ができます。</p>
       <div class="app-meta">
         <span class="tag">265問</span><span class="tag">年代整序55セット</span>
         <span class="tag">3分野</span><span class="tag">全問解説</span>
       </div>
       <div class="go">ひらく ›</div>
+      </div>
     </a>
 
-    <a class="app" href="https://biosprout.github.io/bio-quest/">
-      <div class="app-head">
-        <img src="icons/bio.png" alt="">
-        <div>
-          <div class="app-name">BIO QUEST</div>
-          <div class="app-for">生物 ／ 高校〜国際生物学オリンピック水準</div>
-        </div>
-      </div>
-      <p class="app-desc">高校生物を329問。細胞・代謝・遺伝・分子生物学など8分野を扱います。やさしい〜難しいに加えて、大学教養レベルに踏み込んだ「IBO級」を160問収録。生物を深く学びたい人向けです。</p>
-      <div class="app-meta">
-        <span class="tag">329問</span><span class="tag">8分野</span>
-        <span class="tag">IBO級160問</span><span class="tag">全問解説</span>
-      </div>
-      <div class="go">ひらく ›</div>
-    </a>
 
   </div>
 
