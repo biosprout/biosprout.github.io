@@ -3,8 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>まなびアプリ集 — 無料・広告なしの学習アプリ</title>
-<meta name="description" content="中学生向けの学習アプリ。英単語7,972語、中学理科398問、中学社会265問、中学国語280問、計算トレーニング。無料・広告なし・登録不要・オフライン対応。">
+<title>biosprout — まなびアプリ集</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#3D2FB8">
+<meta name="description" content="中学生向けの学習アプリ5本。英単語7,972語、中学理科398問と計算21種、中学社会415問、中学国語280問と語彙295語、計算トレーニング。無料・広告なし・登録不要・オフライン対応。">
 <meta property="og:title" content="まなびアプリ集">
 <meta property="og:description" content="無料・広告なし・登録不要の学習アプリ。英単語・理科・社会・国語・計算。">
 <meta property="og:type" content="website">
@@ -16,6 +21,8 @@
   :root{
     --bg:#F4F4FB;--card:#FFFFFF;--text:#1A1A2E;--sub:#6E6E88;--border:#E6E6F2;
     --accent:#3D2FB8;
+    /* 緑は「今日の〇〇」だけに使う。日課の入口という役割に色を割り当てている */
+    --sprout:#12805A;--sprout-bg:#E8F5EF;
     --shadow:0 6px 24px rgba(31,31,80,.07);
   }
   *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -24,11 +31,13 @@
     min-height:100vh;line-height:1.7;padding:0 18px 56px}
   .wrap{max-width:760px;margin:0 auto}
 
-  header{padding:44px 4px 26px;text-align:center}
-  h1{font-size:26px;font-weight:900;letter-spacing:-.5px;line-height:1.45}
-  h1 span{color:var(--accent)}
-  .lead{font-size:14px;color:var(--sub);font-weight:500;margin-top:12px}
-  .badges{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:18px}
+  header{padding:42px 4px 26px}
+  .mark{display:flex;align-items:center;gap:13px}
+  .mark img{width:46px;height:46px;border-radius:12px;flex:0 0 auto}
+  h1{font-family:'Poppins',sans-serif;font-size:31px;font-weight:800;letter-spacing:-.8px;line-height:1.05}
+  .sub-name{font-size:13px;font-weight:700;color:var(--sub);letter-spacing:.4px;margin-top:2px}
+  .lead{font-size:14px;color:var(--sub);font-weight:500;margin-top:16px;max-width:34em}
+  .badges{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
   .badge{background:var(--card);border:1px solid var(--border);border-radius:999px;
     padding:6px 13px;font-size:12px;font-weight:700;color:var(--sub)}
 
@@ -53,19 +62,33 @@
   .app-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:13px}
   .tag{background:var(--bg);border:1px solid var(--border);border-radius:8px;
     padding:4px 9px;font-size:11px;font-weight:700;color:var(--sub)}
+  /* 5本すべてで同じ見た目にして、共通の入口だと分かるようにする */
+  .today{display:flex;align-items:center;gap:8px;margin-top:14px;
+    background:var(--sprout-bg);border-radius:11px;padding:9px 12px}
+  .today img{width:15px;height:15px;flex:0 0 auto}
+  .today b{font-size:12.5px;font-weight:800;color:var(--sprout)}
+  .today span{font-size:11.5px;color:var(--sub);font-weight:600}
   .go{margin-top:15px;font-size:13px;font-weight:800;color:var(--accent)}
 
   .sec{margin-top:34px}
   .sec h2{font-size:15px;font-weight:900;margin-bottom:12px}
   .note{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px 20px}
   .lead-s{font-size:13px;color:var(--sub);font-weight:500;line-height:1.8;margin-bottom:12px}
-  .ways{display:grid;gap:10px}
-  @media(min-width:640px){.ways{grid-template-columns:1fr 1fr}}
-  .way{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:12px 15px}
-  .way b{display:block;font-size:14px;font-weight:900;margin-bottom:3px}
-  .way span{display:block;font-size:12.5px;color:var(--sub);font-weight:500;line-height:1.75}
-  .way em{display:inline-block;margin-top:7px;font-style:normal;font-size:11px;font-weight:800;
-    color:var(--accent);background:var(--bg);padding:3px 9px;border-radius:99px}
+  .daily-note{background:var(--sprout-bg);border-radius:16px;padding:17px 20px}
+  .daily-note p{font-size:13px;color:#3A5D4F;font-weight:500;line-height:1.85;margin-bottom:10px}
+  .daily-note p:last-child{margin-bottom:0}
+  .daily-note b{color:var(--sprout);font-weight:800}
+  .ways{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:6px 20px}
+  .way{display:grid;grid-template-columns:7.5em 1fr;gap:4px 18px;
+    padding:14px 0;border-bottom:1px solid var(--border)}
+  .way:last-child{border-bottom:0}
+  .way b{font-size:13.5px;font-weight:800;line-height:1.5;white-space:nowrap}
+  .way span{font-size:12.5px;color:var(--sub);font-weight:500;line-height:1.75}
+  .way em{grid-column:2;font-style:normal;font-size:11px;font-weight:800;color:var(--accent)}
+  @media(max-width:520px){
+    .way{grid-template-columns:1fr;gap:2px}
+    .way em{grid-column:1}
+  }
   .note p{font-size:13px;color:var(--sub);font-weight:500;margin-bottom:11px}
   .note p:last-child{margin-bottom:0}
   .note b{color:var(--text)}
@@ -83,7 +106,13 @@
 <div class="wrap">
 
   <header>
-    <h1>まなび<span>アプリ集</span></h1>
+    <div class="mark">
+      <img src="favicon.svg" alt="" width="46" height="46">
+      <div>
+        <h1>biosprout</h1>
+        <div class="sub-name">まなびアプリ集</div>
+      </div>
+    </div>
     <p class="lead">子ども用に作った学習アプリを公開しています。<br>ブラウザで開くだけで、すぐに使えます。<br>
     <b>「今日の〇〇」を押すだけ</b>で、その日にやることが決まります。</p>
     <div class="badges">
@@ -107,13 +136,12 @@
         </div>
       </div>
       <div class="app-body">
-        <p class="app-desc">中学の基本から英検準1級レベルまで 7,972語。6つのレベルから選んで、フラッシュカード・4択・書き取り・リスニングなど6通りの方法で覚えられます。教科書やテスト範囲の単語を自分で追加することもできます。<br>
-        開いてすぐの<b>「今日の20語」</b>は、苦手な語・そろそろ忘れそうな語・はじめての語を自動でまぜて出します。何日あいても20語のまま。いつ開いても同じ量から始められます。</p>
+        <p class="app-desc">中学の基本から英検準1級レベルまで 7,972語。6つのレベルから選んで、フラッシュカード・4択・書き取り・リスニングなど6通りの方法で覚えられます。教科書やテスト範囲の単語を自分で追加することもできます。</p>
       <div class="app-meta">
         <span class="tag">7,972語</span><span class="tag">6レベル</span>
-        <span class="tag">6モード</span><span class="tag">音声つき</span>
-        <span class="tag">今日の20語</span><span class="tag">図鑑64種</span>
+        <span class="tag">6モード</span><span class="tag">図鑑64種</span>
       </div>
+      <div class="today"><img src="sprout-green.svg" alt=""><b>今日の20語</b><span>1日ぶんの英単語</span></div>
       <div class="go">ひらく ›</div>
       </div>
     </a>
@@ -131,9 +159,9 @@
         <b>「理科の計算」</b>は、答えを自分で書く形式です。オームの法則、密度、圧力、湿度、化学変化の質量比など21種類を、その場で数字を作って出題します。まちがえた種類が次に多めに出ます。</p>
       <div class="app-meta">
         <span class="tag">398問</span><span class="tag">4分野</span>
-        <span class="tag">3段階</span><span class="tag">全問解説</span>
-        <span class="tag">今日の10問</span><span class="tag">計算21種</span><span class="tag">図鑑67種</span>
+        <span class="tag">計算21種</span><span class="tag">図鑑67種</span>
       </div>
+      <div class="today"><img src="sprout-green.svg" alt=""><b>今日の10問</b><span>1日ぶんの理科</span></div>
       <div class="go">ひらく ›</div>
       </div>
     </a>
@@ -147,13 +175,12 @@
         </div>
       </div>
       <div class="app-body">
-      <p class="app-desc">加減乗除の100本ノックをはじめ、九九の逆引き、補数、正負の数、工夫して計算、概算の8モード。問題は毎回その場で作られるので、やるたびに新しい問題が出ます。数と計算にまつわる豆知識を集める図鑑もあります。<br>
-        <b>「今日の20問」</b>は、まちがえた<b>パターン</b>を覚えていて、数字を変えた新しい問題として出します。終わったあとに「くり下がりのひき算 2/4」のようにパターンごとの成績が出るので、どこでつまずいているかが一目でわかります。</p>
+      <p class="app-desc">加減乗除の100本ノックをはじめ、九九の逆引き、補数、正負の数、工夫して計算、概算の8モード。問題は毎回その場で作られるので、やるたびに新しい問題が出ます。数と計算にまつわる豆知識を集める図鑑もあります。まちがえた<b>パターン</b>を覚えていて、終わったあとに「くり下がりのひき算 2/4」のようにパターンごとの成績が出ます。</p>
       <div class="app-meta">
         <span class="tag">8モード</span><span class="tag">100本ノック</span>
         <span class="tag">問題は自動生成</span><span class="tag">図鑑38種</span>
-        <span class="tag">今日の20問</span><span class="tag">パターン別の成績</span>
       </div>
+      <div class="today"><img src="sprout-green.svg" alt=""><b>今日の20問</b><span>1日ぶんの計算</span></div>
       <div class="go">ひらく ›</div>
       </div>
     </a>
@@ -171,9 +198,9 @@
         4択とは別に<b>語彙295語</b>を収録しています。漢字と四字熟語は<b>読みを自分で書く</b>形式、ことわざ・慣用句・古文単語は<b>めくって覚えるカード</b>で、それぞれの言葉に合った練習ができます。</p>
       <div class="app-meta">
         <span class="tag">280問</span><span class="tag">語彙295語</span>
-        <span class="tag">4分野</span><span class="tag">3段階</span>
-        <span class="tag">今日の10問</span><span class="tag">読みを書く</span><span class="tag">図鑑68種</span>
+        <span class="tag">読みを書く</span><span class="tag">図鑑68種</span>
       </div>
+      <div class="today"><img src="sprout-green.svg" alt=""><b>今日の10問</b><span>1日ぶんの国語</span></div>
       <div class="go">ひらく ›</div>
       </div>
     </a>
@@ -191,14 +218,23 @@
         用語の暗記に加えて、時差や縮尺の計算、制度の比較など、考えて答える問題を多く入れています。</p>
       <div class="app-meta">
         <span class="tag">415問</span><span class="tag">年代整序55セット</span>
-        <span class="tag">3分野</span><span class="tag">全問解説</span>
-        <span class="tag">今日の10問</span><span class="tag">図鑑68種</span>
+        <span class="tag">3分野</span><span class="tag">図鑑68種</span>
       </div>
+      <div class="today"><img src="sprout-green.svg" alt=""><b>今日の10問</b><span>1日ぶんの社会</span></div>
       <div class="go">ひらく ›</div>
       </div>
     </a>
 
 
+  </div>
+
+  <div class="sec">
+    <h2>☀️ 今日の〇〇</h2>
+    <div class="daily-note">
+      <p>どのアプリにも、その日のぶんだけを出す入口があります。開いて1回押せば始まります。</p>
+      <p>中身は自動で決まります。<b>苦手なもの</b>、<b>そろそろ忘れそうなもの</b>、<b>まだ解いていないもの</b>をまぜて出します。何日あいても数は変わらないので、たまった量に追われることがありません。まちがえたものは、日をおいてまた出てきます。</p>
+      <p>MATH UP! だけは少し違って、まちがえた問題そのものではなく<b>まちがえたパターン</b>を覚えています。「25 × 12」でつまずいたら、翌日は「25 × 8」が出ます。</p>
+    </div>
   </div>
 
   <div class="sec">
@@ -231,8 +267,7 @@
     <h2>ℹ️ このアプリについて</h2>
     <div class="note">
       <p>広告・課金・アカウント登録はありません。学習の記録は使っている端末の中だけに保存され、外部に送られることはありません。</p>
-      <p>どのアプリにも「今日の20語」「今日の10問」といった入口があります。開いて1回押せば、その日のぶんが始まります。苦手な問題・そろそろ忘れそうな問題・はじめての問題を自動でまぜて出します。いつ開いても同じ量から始められます。<br><br>
-    続けたくなる仕掛けとして、レベルと称号、実績、豆知識を集める図鑑が入っています。図鑑には英単語の語源、科学者の逸話、歴史のエピソードなどが収録されていて、読み物としても楽しめます。</p>
+      <p>続けたくなる仕掛けとして、レベルと称号、実績、豆知識を集める図鑑が入っています。図鑑には英単語の語源、科学者の逸話、歴史のエピソードなどが収録されていて、読み物としても楽しめます。</p>
       <p>個人が子どものために作ったものです。サポートや不具合対応のお約束はできませんので、ご了承のうえお使いください。</p>
     </div>
   </div>
