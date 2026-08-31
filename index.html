@@ -58,6 +58,14 @@
   .sec{margin-top:34px}
   .sec h2{font-size:15px;font-weight:900;margin-bottom:12px}
   .note{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px 20px}
+  .lead-s{font-size:13px;color:var(--sub);font-weight:500;line-height:1.8;margin-bottom:12px}
+  .ways{display:grid;gap:10px}
+  @media(min-width:640px){.ways{grid-template-columns:1fr 1fr}}
+  .way{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:12px 15px}
+  .way b{display:block;font-size:14px;font-weight:900;margin-bottom:3px}
+  .way span{display:block;font-size:12.5px;color:var(--sub);font-weight:500;line-height:1.75}
+  .way em{display:inline-block;margin-top:7px;font-style:normal;font-size:11px;font-weight:800;
+    color:var(--accent);background:var(--bg);padding:3px 9px;border-radius:99px}
   .note p{font-size:13px;color:var(--sub);font-weight:500;margin-bottom:11px}
   .note p:last-child{margin-bottom:0}
   .note b{color:var(--text)}
@@ -76,13 +84,15 @@
 
   <header>
     <h1>まなび<span>アプリ集</span></h1>
-    <p class="lead">子ども用に作った学習アプリを公開しています。<br>ブラウザで開くだけで、すぐに使えます。</p>
+    <p class="lead">子ども用に作った学習アプリを公開しています。<br>ブラウザで開くだけで、すぐに使えます。<br>
+    <b>「今日の〇〇」を押すだけ</b>で、その日にやることが決まります。</p>
     <div class="badges">
       <span class="badge">🚫 広告なし</span>
       <span class="badge">🔓 登録不要</span>
       <span class="badge">💴 無料</span>
       <span class="badge">🔒 データを集めません</span>
       <span class="badge">📶 オフライン対応</span>
+      <span class="badge">☀️ 今日のぶんだけでOK</span>
     </div>
   </header>
 
@@ -97,10 +107,12 @@
         </div>
       </div>
       <div class="app-body">
-        <p class="app-desc">中学の基本から英検準1級レベルまで 7,972語。6つのレベルから選んで、フラッシュカード・4択・書き取り・リスニングなど6通りの方法で覚えられます。教科書やテスト範囲の単語を自分で追加することもできます。</p>
+        <p class="app-desc">中学の基本から英検準1級レベルまで 7,972語。6つのレベルから選んで、フラッシュカード・4択・書き取り・リスニングなど6通りの方法で覚えられます。教科書やテスト範囲の単語を自分で追加することもできます。<br>
+        開いてすぐの<b>「今日の20語」</b>は、苦手な語・そろそろ忘れそうな語・はじめての語を自動でまぜて出します。何日あいても20語のまま。いつ開いても同じ量から始められます。</p>
       <div class="app-meta">
         <span class="tag">7,972語</span><span class="tag">6レベル</span>
         <span class="tag">6モード</span><span class="tag">音声つき</span>
+        <span class="tag">今日の20語</span><span class="tag">図鑑64種</span>
       </div>
       <div class="go">ひらく ›</div>
       </div>
@@ -115,10 +127,12 @@
         </div>
       </div>
       <div class="app-body">
-        <p class="app-desc">物理・化学・生物・地学の4分野を398問。基礎・標準・入試の3段階から選べます。用語だけでなく「なぜそうなるか」を問う問題や、実験の考察問題も入っています。全問に解説つき。</p>
+        <p class="app-desc">物理・化学・生物・地学の4分野を398問。基礎・標準・入試の3段階から選べます。用語だけでなく「なぜそうなるか」を問う問題や、実験の考察問題も入っています。全問に解説つき。<br>
+        <b>「理科の計算」</b>は、答えを自分で書く形式です。オームの法則、密度、圧力、湿度、化学変化の質量比など21種類を、その場で数字を作って出題します。まちがえた種類が次に多めに出ます。</p>
       <div class="app-meta">
         <span class="tag">398問</span><span class="tag">4分野</span>
         <span class="tag">3段階</span><span class="tag">全問解説</span>
+        <span class="tag">今日の10問</span><span class="tag">計算21種</span><span class="tag">図鑑67種</span>
       </div>
       <div class="go">ひらく ›</div>
       </div>
@@ -133,10 +147,12 @@
         </div>
       </div>
       <div class="app-body">
-      <p class="app-desc">加減乗除の100本ノックをはじめ、九九の逆引き、補数、正負の数、工夫して計算、概算の8モード。問題は毎回その場で作られるので、何度やっても同じにはなりません。まちがえた問題だけをやり直せます。数と計算にまつわる豆知識を集める図鑑もあります。</p>
+      <p class="app-desc">加減乗除の100本ノックをはじめ、九九の逆引き、補数、正負の数、工夫して計算、概算の8モード。問題は毎回その場で作られるので、やるたびに新しい問題が出ます。数と計算にまつわる豆知識を集める図鑑もあります。<br>
+        <b>「今日の20問」</b>は、まちがえた<b>パターン</b>を覚えていて、数字を変えた新しい問題として出します。終わったあとに「くり下がりのひき算 2/4」のようにパターンごとの成績が出るので、どこでつまずいているかが一目でわかります。</p>
       <div class="app-meta">
         <span class="tag">8モード</span><span class="tag">100本ノック</span>
-        <span class="tag">問題は自動生成</span><span class="tag">図鑑44種</span>
+        <span class="tag">問題は自動生成</span><span class="tag">図鑑38種</span>
+        <span class="tag">今日の20問</span><span class="tag">パターン別の成績</span>
       </div>
       <div class="go">ひらく ›</div>
       </div>
@@ -151,10 +167,12 @@
         </div>
       </div>
       <div class="app-body">
-      <p class="app-desc">漢字・語彙・文法・古典の4分野を280問。読み書き、同音異義語、四字熟語やことわざ、品詞と敬語、歴史的仮名遣いや係り結びまで。まちがえやすい言葉の本来の意味も扱います。</p>
+      <p class="app-desc">漢字・語彙・文法・古典の4分野を280問。読み書き、同音異義語、四字熟語やことわざ、品詞と敬語、歴史的仮名遣いや係り結びまで。まちがえやすい言葉の本来の意味も扱います。<br>
+        4択とは別に<b>語彙295語</b>を収録しています。漢字と四字熟語は<b>読みを自分で書く</b>形式、ことわざ・慣用句・古文単語は<b>めくって覚えるカード</b>で、それぞれの言葉に合った練習ができます。</p>
       <div class="app-meta">
-        <span class="tag">280問</span><span class="tag">4分野</span>
-        <span class="tag">3段階</span><span class="tag">全問解説</span>
+        <span class="tag">280問</span><span class="tag">語彙295語</span>
+        <span class="tag">4分野</span><span class="tag">3段階</span>
+        <span class="tag">今日の10問</span><span class="tag">読みを書く</span><span class="tag">図鑑68種</span>
       </div>
       <div class="go">ひらく ›</div>
       </div>
@@ -169,16 +187,34 @@
         </div>
       </div>
       <div class="app-body">
-        <p class="app-desc">地理・歴史・公民の3分野を265問。あわせて、できごとを古い順に並べる「年代整序」を55セット収録しています。日本と世界のできごとを混ぜたセットもあり、歴史の流れを縦につかむ練習ができます。</p>
+        <p class="app-desc">地理・歴史・公民の3分野を415問。あわせて、できごとを古い順に並べる「年代整序」を55セット収録しています。日本と世界のできごとを混ぜたセットもあり、歴史の流れを縦につかむ練習ができます。<br>
+        用語の暗記に加えて、時差や縮尺の計算、制度の比較など、考えて答える問題を多く入れています。</p>
       <div class="app-meta">
-        <span class="tag">265問</span><span class="tag">年代整序55セット</span>
+        <span class="tag">415問</span><span class="tag">年代整序55セット</span>
         <span class="tag">3分野</span><span class="tag">全問解説</span>
+        <span class="tag">今日の10問</span><span class="tag">図鑑68種</span>
       </div>
       <div class="go">ひらく ›</div>
       </div>
     </a>
 
 
+  </div>
+
+  <div class="sec">
+    <h2>✍️ 色々な答え方</h2>
+    <p class="lead-s">覚えたいことによって様々な答え方が可能です。</p>
+    <div class="ways">
+      <div class="way"><b>選ぶ</b><span>4択。知識の確認に。全問に解説がつきます</span><em>ぜんぶのアプリ</em></div>
+      <div class="way"><b>書く</b><span>英単語のつづり、漢字の読み。自分で思い出して書くので、覚えているかがはっきりします</span><em>WORD UP! ／ JAPANESE UP!</em></div>
+      <div class="way"><b>数で答える</b><span>計算の答えをキーで入力します。自分で計算して出した数が、そのまま答えになります</span><em>MATH UP! ／ SCIENCE UP!</em></div>
+      <div class="way"><b>並べかえる</b><span>できごとを古い順に。流れをつかんでいるかがわかります</span><em>SOCIAL UP!</em></div>
+      <div class="way"><b>聞いて答える</b><span>読み上げられた英単語を聞き取ります</span><em>WORD UP!</em></div>
+      <div class="way"><b>めくって覚える</b><span>フラッシュカード。ことわざや古文単語は意味カードで</span><em>WORD UP! ／ JAPANESE UP!</em></div>
+      <div class="way"><b>そろえる</b><span>英単語と意味を神経衰弱でそろえます</span><em>WORD UP!</em></div>
+      <div class="way"><b>時間内に解く</b><span>60秒のタイムアタック。速さが力になるものに向いています</span><em>ぜんぶのアプリ</em></div>
+    </div>
+    <p class="lead-s" style="margin-top:12px">計算と理科の計算は、その場で数字を作っています。やるたびに新しい問題が出ます。</p>
   </div>
 
   <div class="sec">
@@ -195,7 +231,8 @@
     <h2>ℹ️ このアプリについて</h2>
     <div class="note">
       <p>広告・課金・アカウント登録はありません。学習の記録は使っている端末の中だけに保存され、外部に送られることはありません。</p>
-      <p>各アプリには、続けたくなる仕掛けとしてレベルと称号、実績、豆知識を集める図鑑が入っています。図鑑には英単語の語源、科学者の逸話、歴史のエピソードなどが収録されていて、読み物としても楽しめます。</p>
+      <p>どのアプリにも「今日の20語」「今日の10問」といった入口があります。開いて1回押せば、その日のぶんが始まります。苦手な問題・そろそろ忘れそうな問題・はじめての問題を自動でまぜて出します。いつ開いても同じ量から始められます。<br><br>
+    続けたくなる仕掛けとして、レベルと称号、実績、豆知識を集める図鑑が入っています。図鑑には英単語の語源、科学者の逸話、歴史のエピソードなどが収録されていて、読み物としても楽しめます。</p>
       <p>個人が子どものために作ったものです。サポートや不具合対応のお約束はできませんので、ご了承のうえお使いください。</p>
     </div>
   </div>
