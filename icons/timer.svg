@@ -1,6 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="">
-  <rect width="96" height="96" rx="22" fill="#3D2FB8"/>
-  <circle cx="48" cy="51" r="27" fill="none" stroke="#fff" stroke-width="6"/>
-  <path d="M48 51V35m0 16 12 7" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
-  <path d="M39 14h18" stroke="#fff" stroke-linecap="round" stroke-width="6"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="おうちタイマー">
+  <defs>
+    <radialGradient id="background" cx="50%" cy="45%" r="75%">
+      <stop offset="0" stop-color="#284764"/>
+      <stop offset="1" stop-color="#101d34"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#background)"/>
+  <rect x="222" y="76" width="68" height="24" rx="12" fill="#bdf66d"/>
+  <rect x="246" y="88" width="20" height="36" rx="10" fill="#bdf66d"/>
+  <circle cx="256" cy="269" r="149" fill="#1b304d"/>
+  <circle cx="256" cy="269" r="149" fill="none" stroke="#4a647c" stroke-width="26"/>
+  <circle cx="256" cy="269" r="149" fill="none" stroke="#bdf66d" stroke-width="26" stroke-linecap="round" stroke-dasharray="650 937" transform="rotate(-90 256 269)"/>
+  <path d="M256 269v-83m0 83 65 39" fill="none" stroke="#f8fbff" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="256" cy="269" r="15" fill="#f8fbff"/>
 </svg>
